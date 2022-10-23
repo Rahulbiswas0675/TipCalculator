@@ -1,71 +1,130 @@
-
-let tipinput;
-
-let TipAmountTag = document.getElementById('tipamount');
-let TotalAmountTag = document.getElementById('total');
-let TipAheadTag = document.getElementById('tipahead');
-
-let billinp = document.getElementById('bill');
-let personinp = document.getElementById('people');
-
-let custominputtag = document.getElementById('custominput');
-
-TipAmountTag.innerHTML = "00";
-TotalAmountTag.innerHTML = "00";
-TipAheadTag.innerHTML = "00";
-
-//TipAmount_Value_Set_________
-function tip1() {
-    tipinput = 0.05;
+*{
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
-function tip2() {
-    tipinput = 0.10;
+.Calculator{
+    margin-top: 5rem;
+    background-color: rgba(12, 84, 95, 0.764);
+    width: 50%;
+    /* height: 26rem; */
+    margin-left: 25%;
+    padding: 1rem;
+    border-radius: 10px;
 }
-function tip3() {
-    tipinput = 0.15;
+h1{
+    text-align: center;
 }
-function tip4() {
-    tipinput = 0.25;
+.cal-continear{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
 }
-function tip5() {
-    tipinput = 0.50;
+.contanear{
+    padding: 16px;
+    border-radius: 10px;
+    background-color: rgba(241, 213, 175, 0.707);
 }
-//TipAmount_Custom-Input-tag-style-change_
-function custom() {
-    custominputtag.style.visibility = "visible";
+.bill{
+    margin-top: 8px;
 }
-//TipAmount_Custom_Value_Set_____________
-function customValue(val) {
-    tipinput = val / 100;
+.input{
+    height: 1.5rem;
+    border-radius: 5px;
+    border: none;
 }
-function calculat() {
-    //Calculat_Input_Value_________________________________
-    const bill = document.getElementById('bill').value;
-    const person = document.getElementById('people').value;
-
-    if (bill && person && tipinput) {
-        //Math_________________________________________________
-        const TipAmount = tipinput * bill;
-        const TotalAmount = TipAmount + Number(bill);
-        const TipAhead = TipAmount / person;
-        //Display_Upgrade______________________________________
-        TipAmountTag.innerHTML = TipAmount;
-        TotalAmountTag.innerHTML = TotalAmount;
-        TipAheadTag.innerHTML = TipAhead;
-    } else {
-        alert("Please Fill The From");
-    }
+label{
+    font-size: 1.5rem;
+    font-weight: bold;
 }
-function reset() {
-    //Calculat_Upgrade____________________
-    tipinput = "";
-    billinp.value = "";
-    personinp.value = "";
-    custominputtag.value = "";
-    //Display_Upgrade_____________________
-    TipAmountTag.innerHTML = "00";
-    TotalAmountTag.innerHTML = "00";
-    TipAheadTag.innerHTML = "00";
-    //Change _Style_______________________
-    custominputtag.style.visibility = "hidden";
+.tips{
+    margin-top: 1.3rem;
+}
+.pers{
+    display:flexbox;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+.pers-btn{
+    width: 5.8rem;
+    height: 2rem;
+    margin-top: 8px;
+    border-radius: 5px;
+    /* border: none; */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(16, 31, 93, 0.793);
+}
+.pers-btn:hover{
+    background-color: rgba(70, 98, 208, 0.793);
+}
+#custominput{
+    visibility: hidden;
+}
+.people{
+    margin-top: 1.2rem;
+}
+#Calculat{
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: rgb(9, 91, 9);
+}
+#Calculat:hover{
+    background-color: rgb(3, 167, 3);
+}
+.display{
+    padding: 16px;
+    border-radius: 10px;
+    background-color: rgba(16, 72, 44, 0.541);
+    display: flex;
+    flex-direction: column;
+}
+.tip-amount{
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    align-items: center;
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    height: 4rem;
+    align-items: center;
+}
+.tip-per-head{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    height: 4rem;
+    align-items: center;
+}
+.pera{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.amount{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: end;
+    /* overflow: hidden; */
+}
+#reset{
+    height: 2rem;
+    border-radius: 5px;
+    /* border: none; */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 2.6rem;
+    cursor: pointer;
+    background-color: rgb(180, 13, 13);
+}
+#reset:hover{
+    background-color: red;
 }
