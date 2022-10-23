@@ -4,38 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TIP CALCULATOR</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tip-Calculator</title>
+    <link rel="stylesheet" href="tip-cal.css">
 </head>
 <body>
-	<div class="container">
-        <!-- Heading -->
-        <h1>TIP CALCULATOR</h1>
-        <div class="wrapper">
-            <p>Bill Amount</p>
-            <input type="text" id="amount" placeholder="Amount to be paid"> ₹<p>How was the service ?</p>
-            <!-- Tips % -->
-            <select id="services">
-                <option selected disabled hidden>Select</option>
-                <option value="0.25">25% - Top Notch</option>
-                <option value="0.20">20% - Excellent</option>
-                <option value="0.15">15% - Good</option>
-                <option value="0.10">10% - Bad</option>
-                <option value="0.05">5% - Worst</option>
-            </select>
-            <!-- Total Persons -->
-            <p>Total number of persons</p>
-            <input type="text" id="persons" placeholder="Number of people sharing the bill">
-            <!-- Calculate Btn -->
-            <button id="calculate">Calculate</button>
+    <div class="Calculator">
+        <h1>Tip-Calculator</h1>
+        <div class="cal-continear">
+            <div class="contanear">
+                <div class="bill">
+                    <label for="bill">Bill</label>
+                    <input type="number" class="input" id="bill" placeholder="" />
+                </div>
+                <div class="tips">
+                    <label for="persent">Select Tip %</label>
+                    <div class="pers">
+                        <button class="pers-btn" onclick="tip1()">5%</button>
+                        <button class="pers-btn" onclick="tip2()">10%</button>
+                        <button class="pers-btn" onclick="tip3()">15%</button>
+                        <button class="pers-btn" onclick="tip4()">25%</button>
+                        <button class="pers-btn" onclick="tip5()">50%</button>
+                        <button class="pers-btn" onclick="custom()">Custom</button>
+                    </div>
+                    <input type="number" placeholder="" class="input" id="custominput" value="" onchange="customValue(this.value)"/>
+                </div>
+                <div class="people">
+                    <label for="people">Number of People</label>
+                    <input type="number" placeholder="" id="people" class="input" />
+                </div>
+                <button id="Calculat" onclick="calculat()">Calculate</button>
+            </div>
+            <div class="display">
+                <div class="tip-amount">
+                    <p class="pera">Tip Amount</p>
+                    <p class="amount" id="tipamount"></p>
+                </div>
+                <div class="total">
+                    <p class="pera">Total Amount</p>
+                    <p class="amount" id="total"></p>
+                </div>
+                <div class="tip-per-head">
+                    <p class="pera">Tip Per Head</p>
+                    <p class="amount" id="tipahead"></p>
+                </div>
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
         </div>
-        <!-- Statement div -->
-        <div class="tip">
-            <p>Tip Amount</p>
-            <span id="total">0</span>₹
-            <span id="each">each</span>
-        </div>
-	</div>
+    </div>
 </body>
-<script src="script.js"></script>
+<script src="tip-cal.js"></script>
 </html>
